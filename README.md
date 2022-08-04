@@ -2,9 +2,9 @@
 
 直接明了：快速开始指南。  
 
-主要记录一些 demo，需要的自取。  
+主要记录一些组件 demo，需要的自取。  
 
-## ShardingSphere-4.1.1
+## ShardingSphere-4.1.1-demo
 
 使用 ShardingSphere4.1.1 进行数据分片。  
 

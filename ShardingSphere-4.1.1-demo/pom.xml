@@ -3,9 +3,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>cc.rcbb</groupId>
-    <artifactId>ShardingSphere-4.1.1</artifactId>
+    <artifactId>ShardingSphere-4.1.1-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ShardingSphere-4.1.1</name>
+    <name>ShardingSphere-4.1.1-demo</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
