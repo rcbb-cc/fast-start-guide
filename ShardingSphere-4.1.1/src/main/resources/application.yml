@@ -1,0 +1,38 @@
+spring:
+  shardingsphere:
+    datasource:
+      names: ds0,ds1
+      ds0:
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://192.168.1.56:5433/sharding_test?&ssl=false&stringtype=unspecified
+        type: com.alibaba.druid.pool.DruidDataSource
+        username: postgres
+        password: postgres
+      ds1:
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://192.168.1.56:5433/sharding_test?&ssl=false&stringtype=unspecified
+        type: com.alibaba.druid.pool.DruidDataSource
+        username: postgres
+        password: postgres
+    props:
+      sql:
+        show: true
+    sharding:
+      default-data-source-name: ds0
+      tables:
+        t_order:
+          actual-data-nodes: ds0.t_order$->{0..3}
+          table-strategy:
+            inline:
+              algorithm-expression: t_order$->{order_id % 4}
+              sharding-column: order_id
+        t_position:
+          actual-data-nodes: ds$->{0..1}.t_position_$->{2020..2021}_$->{1..12}_$->{1..31}
+          database-strategy:
+            standard:
+              precise-algorithm-class-name: cc.rcbb.sharding.test.config.DBShardingAlgorithm
+              sharding-column: position_id
+          table-strategy:
+            standard:
+              precise-algorithm-class-name: cc.rcbb.sharding.test.config.TableShardingAlgorithm
+              sharding-column: loc_date
