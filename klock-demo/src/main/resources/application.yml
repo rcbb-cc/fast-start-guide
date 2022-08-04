@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: klock-demo
+  klock:
+    address: 127.0.0.1:6379 #redis链接地址
+    password: 2021 #redis密码
+    database: 1 #redis数据索引
+    waitTime: 60 #获取锁最长阻塞时间（默认：60，单位：秒）
+    leaseTime: 60 #已获取锁后自动释放时间（默认：60，单位：秒）
+#    cluster-server:
+#      node-addresses: #redis集群配置 如 127.0.0.1:7000,127.0.0.1:7001，127.0.0.1:7002
+# spring.klock.address 和 spring.klock.cluster-server.node-addresses 选其一即可
+server:
+  port: 8081

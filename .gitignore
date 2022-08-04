@@ -1,4 +1,8 @@
 .idea
 # ShardingSphere-4.1.1-demo
 /ShardingSphere-4.1.1-demo/target/
-/ShardingSphere-4.1.1-demo/.idea
+/ShardingSphere-4.1.1-demo/.idea/
+
+# klock-demo
+/klock-demo/target/
+/klock-demo/.idea/
