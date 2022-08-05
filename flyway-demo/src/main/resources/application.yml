@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: flyway-test
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.1.56:5432/test_flyway?&ssl=false&stringtype=unspecified
+    username: postgres
+    password: postgres
+
+server:
+  port: 8080

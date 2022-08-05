@@ -4,6 +4,10 @@
 
 主要记录一些组件 demo，需要的自取。  
 
+## flyway-demo
+
+Flyway 是一个能对数据库变更做版本控制的工具。  
+
 ## ShardingSphere-4.1.1-demo
 
 使用 ShardingSphere4.1.1 进行数据分片。  

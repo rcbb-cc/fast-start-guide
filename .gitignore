@@ -6,3 +6,7 @@
 # klock-demo
 /klock-demo/target/
 /klock-demo/.idea/
+
+# flyway-demo
+/flyway-demo/target/
+/flyway-demo/.idea/

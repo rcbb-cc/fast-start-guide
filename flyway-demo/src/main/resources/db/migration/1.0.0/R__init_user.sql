@@ -1,0 +1,1 @@
+insert into tb_user(username, nickname, age) VALUES ('test','test',18);
