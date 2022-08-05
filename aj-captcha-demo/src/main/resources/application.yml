@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: aj-captcha-demo
+server:
+  port: 9696
+
+aj:
+  captcha:
+    # 支持全路径
+#    jigsaw: C:/Users/Desktop/images/jigsaw
+#    pic-click: C:/Users/Desktop/images/pic-click
+    # 支持项目路径以classpath:开头,取resource目录下路径,例：classpath:images/jigsaw
+    jigsaw: classpath:images/jigsaw
+    pic-click: classpath:images/pic-click
+    # 水印
+    water-mark: www.rcbb.cc
