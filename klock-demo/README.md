@@ -115,7 +115,7 @@ public @interface Klock {
 
 ## 测试使用
 
-源码地址：https://github.com/rcbb-cc/klock-demo
+源码地址：https://github.com/rcbb-cc/fast-start-guide
 
 ### 方法级加锁
 
