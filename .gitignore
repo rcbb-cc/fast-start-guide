@@ -16,4 +16,7 @@
 /klock-demo/target/
 /klock-demo/.idea/
 
-
+# logback-demo
+/logback-demo/target/
+/logback-demo/.idea/
+/logback-demo/logs/
