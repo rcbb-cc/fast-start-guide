@@ -26,3 +26,7 @@ SpringBoot使用logback日志框架超详细教程
 
 自定义分库、分表算法，实现按日期进行分表。  
 
+## zxing-demo
+
+使用 zxing 库实现二维码生成。
+

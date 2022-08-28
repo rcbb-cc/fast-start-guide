@@ -20,3 +20,7 @@
 /logback-demo/target/
 /logback-demo/.idea/
 /logback-demo/logs/
+
+# zxing-demo
+/zxing-demo/target/
+/zxing-demo/.idea/
