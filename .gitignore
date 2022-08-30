@@ -21,6 +21,10 @@
 /logback-demo/.idea/
 /logback-demo/logs/
 
+# mapstruct-demo
+/mapstruct-demo/target/
+/mapstruct-demo/.idea/
+
 # zxing-demo
 /zxing-demo/target/
 /zxing-demo/.idea/
