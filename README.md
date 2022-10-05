@@ -18,7 +18,11 @@ Flyway 是一个能对数据库变更做版本控制的工具。
 
 ## logback-demo
 
-SpringBoot使用logback日志框架超详细教程
+SpringBoot 使用 logback 日志框架超详细教程。
+
+## mapstruct-demo
+
+mapstruct 使用指南。  
 
 ## ShardingSphere-4.1.1-demo
 
