@@ -30,6 +30,10 @@ mapstruct 使用指南。
 
 自定义分库、分表算法，实现按日期进行分表。  
 
+## SpringSecurity-demo
+
+使用 Spring Security 和 Spring Security OAuth 的详细教程。
+
 ## zxing-demo
 
 使用 zxing 库实现二维码生成。
