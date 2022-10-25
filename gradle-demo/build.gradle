@@ -1,0 +1,41 @@
+// 插件声明
+plugins {
+    id 'org.springframework.boot' version '2.7.5'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'java'
+}
+// 项目基础信息
+group = 'cc.rcbb'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+// 仓库地址
+repositories {
+    // 阿里云的镜像仓库
+    maven {
+        url 'https://maven.aliyun.com/repository/public/'
+    }
+    mavenCentral()
+}
+
+// 第三方依赖
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+// 单元测试声明
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+// 输出当前项目名称
+println(project.name)
+// 一般在当前build.gradle中使用时，默认会省略project
+println(name)
+// 输出project中名字为name的属性
+println(project.property("name"))
+
+// 指定默认执行的task，即./gradlew不指定task时会执行该task
+defaultTasks('yourTask')
+
