@@ -1,0 +1,25 @@
+//apply plugin: "groovy-gradle-plugin"
+// 插件声明
+plugins {
+    id 'groovy-gradle-plugin'
+}
+
+
+repositories {
+    maven { url "https://maven.aliyun.com/repository/public" }
+    maven { url "https://plugins.gradle.org/m2/" }
+}
+
+gradlePlugin {
+    plugins {
+        GreetingPlugin {
+            id = "cc.rcbb.gradle.demo.greeting"
+            implementationClass = "cc.rcbb.gradle.demo.GreetingPlugin"
+            description = "Add compile parameters"
+        }
+        dockerPlugin {
+            id = "cc.rcbb.gradle.demo.docker.buildImage"
+            implementationClass = "cc.rcbb.gradle.demo.docker.BuildImagePlugin"
+        }
+    }
+}

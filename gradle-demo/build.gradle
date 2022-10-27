@@ -3,10 +3,14 @@ plugins {
     id 'org.springframework.boot' version '2.7.5'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
     id 'java'
+    id 'cc.rcbb.gradle.demo.greeting'
+    id 'cc.rcbb.gradle.demo.docker.buildImage'
+    id 'com.bmuschko.docker-spring-boot-application' version '6.7.0'
 }
+
 // 项目基础信息
 group = 'cc.rcbb'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.3-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 // 仓库地址
@@ -20,7 +24,10 @@ repositories {
 
 // 第三方依赖
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.projectlombok:lombok:1.18.12"
+    annotationProcessor "org.projectlombok:lombok:1.18.12"
+    implementation 'cn.hutool:hutool-all:5.8.9'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
@@ -39,3 +46,91 @@ println(project.property("name"))
 // 指定默认执行的task，即./gradlew不指定task时会执行该task
 defaultTasks('yourTask')
 
+
+// ======================定义task闭包======================
+// 直接声明
+task taskOne {
+    println "method1"
+}
+
+task('taskTwo') {
+    println "taskTwo"
+}
+
+// 配置group
+task taskDev1 {
+    group "dev"
+    description "dev1"
+    println "taskDev1"
+}
+
+// ======================docker构建和上传 start ======================
+
+project.ext {
+    //gradle buildImage -Penv=prod
+    if (!project.hasProperty("env")) {
+        env = "dev"
+    }
+    println "run env: ${env}"
+}
+
+docker {
+    url = "tcp://xxx.xx.xx.xxx:2375"
+    certPath = null
+    registryCredentials {
+        username = 'xxxxx'
+        password = 'xxxxx'
+    }
+}
+
+// 每次构建都清理一次build/docker目录
+task cleanDocker(type: Delete) {
+    delete fileTree("${buildDir}/docker") {
+        include '**/*'
+    }
+}
+
+//将bootJar拷贝到build/docker目录下，并重命名
+task copyDockerJar(type: Copy, dependsOn: bootJar) {
+    group = "docker"
+    //拷贝前清理docker目录下所有文件
+    dependsOn cleanDocker
+    // 将Dockerfile和jar拷贝到build/docker目录下
+    from "${project.rootDir}/Dockerfile", bootJar.archiveFile
+    into "${project.buildDir}/docker"
+    //改名为it235-order.jar，Dockerfile中需要使用
+    rename {
+        String fileName -> fileName.replace("-${version}", "")
+    }
+}
+
+//指定构建镜像时的位置和服务URL
+import com.bmuschko.gradle.docker.tasks.image.*
+
+task buildImage(type: DockerBuildImage, dependsOn: copyDockerJar) {
+    group "docker"
+    url = "tcp://xxx.xx.xx.xxx:2375"
+    images.add("registry.cn-shenzhen.aliyuncs.com/rcbb-test/gradle-demo:${version}")
+}
+
+task tagImage(type: DockerTagImage) {
+    dependsOn buildImage
+    repository = "registry.cn-shenzhen.aliyuncs.com/rcbb-test/gradle-demo"
+    tag = "${version}"
+    targetImageId buildImage.getImageId()
+}
+
+task removeImage(type: DockerRemoveImage) {
+    targetImageId buildImage.imageId
+    force = true
+}
+
+task pushImage(type: DockerPushImage) {
+    group "docker"
+    //构建
+    dependsOn tagImage
+    //推完之后，进行删除
+    finalizedBy removeImage
+    images = buildImage.images
+}
+// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^docker构建和上传^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
