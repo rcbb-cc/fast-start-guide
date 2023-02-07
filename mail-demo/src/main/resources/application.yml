@@ -1,0 +1,12 @@
+spring:
+  mail:
+    host: smtp.office365.com
+    username: jxsmtp101@outlook.com
+    password: java-12345678
+    port: 465
+    protocol: smtp
+    properties:
+      "mail.transport.protocol": smtp
+      "mail.smtp.auth": true
+      "mail.smtp.starttls.enable": false
+      "mail.smtp.ssl.enable": true

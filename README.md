@@ -20,6 +20,14 @@ Flyway 是一个能对数据库变更做版本控制的工具。
 
 SpringBoot 使用 logback 日志框架超详细教程。
 
+## mail-demo
+
+邮件发送例子。
+
+1. 使用`spring-boot-starter-mail`；
+2. 使用`javax.mail`；
+3. 使用`hutool`工具（对`javax.mail`API的封装）；
+
 ## mapstruct-demo
 
 mapstruct 使用指南。  
