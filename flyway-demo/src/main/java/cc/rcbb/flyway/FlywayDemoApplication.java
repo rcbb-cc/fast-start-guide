@@ -1,13 +1,13 @@
-package rcbb.cc.flyway.test;
+package cc.rcbb.flyway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FlywayTestApplication {
+public class FlywayDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FlywayTestApplication.class, args);
+        SpringApplication.run(FlywayDemoApplication.class, args);
     }
 
 }

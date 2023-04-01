@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>rcbb.cc</groupId>
-    <artifactId>flyway-test</artifactId>
+    <artifactId>flyway-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>flyway-test</name>
     <description>Demo project for flyway</description>
@@ -76,7 +76,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
                 <configuration>
-                    <mainClass>rcbb.cc.flyway.test.FlywayTestApplication</mainClass>
+                    <mainClass>cc.rcbb.flyway.FlywayDemoApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
