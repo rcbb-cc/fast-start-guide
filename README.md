@@ -8,6 +8,10 @@
 
 行为验证码采用嵌入式集成方式，接入方便，安全，高效。  
 
+## influxdb-demo
+
+InfluxDB是一种流行的开源时序数据库。
+
 ## flyway-demo
 
 Flyway 是一个能对数据库变更做版本控制的工具。  
