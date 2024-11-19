@@ -12,6 +12,10 @@
 
 InfluxDB是一种流行的开源时序数据库。
 
+## kafka-demo
+
+Kafka 相关 demo。
+
 ## flyway-demo
 
 Flyway 是一个能对数据库变更做版本控制的工具。  
