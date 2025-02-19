@@ -40,6 +40,14 @@ SpringBoot 使用 logback 日志框架超详细教程。
 
 mapstruct 使用指南。  
 
+## mini_schedule_bak
+
+一个简单的定时任务实现。
+
+B 站看到大佬的视频，自己过来实操学习一下，做个记录留存。
+
+[学java的生生-【不背八股】70行代码实现定时任务](https://www.bilibili.com/video/BV19jffYVE3C/?vd_source=b13a31d63cf084a4bc7e9d71d9c78835#reply113889094272315)
+
 ## ShardingSphere-4.1.1-demo
 
 使用 ShardingSphere4.1.1 进行数据分片。  
