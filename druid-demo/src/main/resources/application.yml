@@ -1,0 +1,88 @@
+spring:
+  datasource:
+    # 数据库驱动
+    driver-class-name:
+    # 数据库连接URL
+    url: url
+    # 数据库用户名
+    username: username
+    # 数据库密码
+    password: password
+    druid:
+      # 连接池基础配置
+      # 初始化时建立物理连接的个数，默认为0
+      initial-size: 20
+      # 最小连接池数量，默认为0
+      min-idle: 20
+      # 最大连接池数量，默认为8
+      max-active: 60
+      # 获取连接的最大等待时间（毫秒），默认为-1
+      max-wait: 30000
+      # 是否在连接空闲时检测其有效性，默认为true
+      test-while-idle: true
+      # 是否在从连接池借用连接时检测其有效性，默认为false
+      test-on-borrow: false
+      # 是否在归还连接到连接池时检测其有效性，默认为false
+      test-on-return: false
+      # 用于检测连接是否有效的SQL语句，默认为null
+      validation-query: SELECT 1
+      # 验证查询超时时间（秒）
+      validation-query-timeout: 5
+      # 额外推荐配置
+      # 空闲连接检测周期（毫秒）
+      time-between-eviction-runs-millis: 60000
+      # 连接最小空闲时间（毫秒）
+      min-evictable-idle-time-millis: 600000
+      # 开启keep-alive
+      keep-alive: true
+      # 开启PSCache
+      pool-prepared-statements: true
+      # PSCache大小
+      max-pool-prepared-statement-per-connection-size: 20
+      # 配置监控统计功能
+      # 配置监控统计的Filter
+      filters: stat,wall,slf4j
+      # 异步初始化连接池，加快应用启动
+      async-init: true
+      # 开启自动回收超时连接
+      remove-abandoned: true
+      # 超过30分钟未使用的连接视为废弃
+      remove-abandoned-timeout: 1800
+      # 记录废弃连接的日志
+      log-abandoned: true
+      # stat过滤器详细配置
+      filter:
+      stat:
+        # 启用stat过滤器
+        enabled: true
+        # 启用慢SQL日志记录
+        log-slow-sql: true
+        # 慢SQL阈值为10秒
+        slow-sql-millis: 5000
+        # 合并相似SQL统计
+        merge-sql: true
+      # 配置StatViewServlet
+      stat-view-servlet:
+      # 是否开启StatViewServlet，默认为false
+        enabled: true
+        # StatViewServlet的访问路径
+        url-pattern: /druid/*
+        # 是否能够重置数据，默认为true
+        reset-enable: false
+        # 登录用户名
+        # login-username: umeox
+        # 登录密码
+        # login-password: umeoX2025
+        # allow: 127.0.0.1 # 限制访问IP，多个IP用逗号分隔
+      # 配置WebStatFilter
+      web-stat-filter:
+        # 是否开启WebStatFilter，默认为false
+        enabled: true
+        # WebStatFilter的过滤路径
+        url-pattern: /*
+        # 忽略的资源
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+        # 开启session统计功能
+        session-stat-enable: true
+        # 开启性能分析
+        profile-enable: true
