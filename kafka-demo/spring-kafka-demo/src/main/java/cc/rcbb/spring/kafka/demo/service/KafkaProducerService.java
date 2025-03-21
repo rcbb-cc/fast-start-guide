@@ -1,7 +1,6 @@
 package cc.rcbb.spring.kafka.demo.service;
 
 import lombok.AllArgsConstructor;
-import org.apache.kafka.common.protocol.types.Field;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +20,10 @@ public class KafkaProducerService {
 
     public void sendMessage(String topic, String message) {
         kafkaTemplate.send(topic, message);
+    }
+
+    public void sendMessageToPartition(String topic, int partition, String message) {
+        kafkaTemplate.send(topic, partition, null, message);
     }
 
 }
