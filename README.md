@@ -30,6 +30,10 @@ Flyway 是一个能对数据库变更做版本控制的工具。
 
 - [Redis分布式锁（spring-boot-klock-starter快速入门）](./klock-demo/README.md)
 
+## Liquibase-demo
+
+Liquibase 是一个开源的数据库版本控制工具。
+
 ## logback-demo
 
 SpringBoot 使用 logback 日志框架超详细教程。
