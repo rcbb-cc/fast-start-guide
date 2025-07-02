@@ -1,14 +1,3 @@
----
-title: 行为验证码(AJ-Captcha快速入门)
-date: 2022-08-05 10:51:45
-permalink: /pages/d57d55/
-categories:
-- 文章
-- Spring
-  tags:
-- 行为验证码
----
-
 ## 行为验证码
 
 行为验证码采用嵌入式集成方式，接入方便，安全，高效。  
