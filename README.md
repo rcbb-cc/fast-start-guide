@@ -73,7 +73,7 @@ B 站看到大佬的视频，自己过来实操学习一下，做个记录留存
 - [02.Spring Security 实战单体应用(认证授权服务+资源服务)](./SpringSecurity-demo/docs/02.Spring Security 实战单体应用(认证授权服务+资源服务))  
 - [03.Spring Security模块化(认证授权服务+资源服务)](./SpringSecurity-demo/docs/03.Spring Security模块化(认证授权服务+资源服务).md)  
 - [04.Spring Security OAuth2自定义授权模式](./SpringSecurity-demo/docs/04.Spring Security OAuth2自定义授权模式.md)  
-- [05.Spring Security学习总结](./SpringSecurity-demo/docss/05.Spring Security学习总结.md)
+- [05.Spring Security学习总结](./SpringSecurity-demo/docs/05.Spring Security学习总结.md)
 
 ## zxing-demo
 
