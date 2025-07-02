@@ -1,0 +1,25 @@
+spring:
+  redis:
+    # Redis 服务器地址
+    host: ${REDIS_HOST:dev-redis}
+    # 密码（默认无密码）
+    password: ${REDIS_PASSWORD:123456}
+    # Redis 端口
+    port: 6379
+    # 数据库索引（默认 0）
+    database: 0
+    # 连接超时（单位：毫秒）
+    timeout: 60000
+    # Lettuce 客户端配置（默认使用 Lettuce）
+    lettuce:
+      pool:
+        # 最大活跃连接数（默认 8）
+        max-active: 8
+        # 最大空闲连接数（默认 8）
+        max-idle: 8
+        # 最小空闲连接数（默认 0）
+        min-idle: 0
+        # 获取连接时的最大等待时间（默认 -1，表示无限制）
+        max-wait: -1ms
+      # 关闭超时时间（默认 10 秒）
+      shutdown-timeout: 10000ms
