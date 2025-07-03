@@ -1,30 +1,3 @@
 .idea
-
-# aj-captcha-demo
-/aj-captcha-demo/target/
-/aj-captcha-demo/.idea/
-
-# flyway-demo
-/flyway-demo/target/
-/flyway-demo/.idea/
-
-# ShardingSphere-4.1.1-demo
-/ShardingSphere-4.1.1-demo/target/
-/ShardingSphere-4.1.1-demo/.idea/
-
-# klock-demo
-/klock-demo/target/
-/klock-demo/.idea/
-
-# logback-demo
-/logback-demo/target/
-/logback-demo/.idea/
-/logback-demo/logs/
-
-# mapstruct-demo
-/mapstruct-demo/target/
-/mapstruct-demo/.idea/
-
-# zxing-demo
-/zxing-demo/target/
-/zxing-demo/.idea/
+**/.idea/
+**/target/
