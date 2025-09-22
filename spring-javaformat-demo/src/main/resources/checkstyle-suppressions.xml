@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+        "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+        "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+<suppressions>
+    <!-- 排除所有文件的SpringHeader检查 -->
+    <suppress checks="SpringHeader" files=".*"/>
+
+    <!-- 排除所有文件的JavadocPackage检查 -->
+    <suppress checks="JavadocPackage" files=".*"/>
+
+    <!-- 排除所有文件的SpringImportOrder检查 -->
+    <suppress checks="SpringImportOrder" files=".*"/>
+</suppressions>
